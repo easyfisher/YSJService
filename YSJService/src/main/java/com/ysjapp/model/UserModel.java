@@ -1,6 +1,8 @@
 package com.ysjapp.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class UserModel {
 	private String name;
@@ -11,9 +13,25 @@ public class UserModel {
 	private int likeNum;
 
 	public static UserModel getRandomUser() {
+		Random random = new Random();
+		
 		UserModel user = new UserModel();
-		user.setName("阿三");
-		user.setGender(1);
+		user.setName(String.valueOf(random.nextInt(100000)));
+		user.setGender(random.nextInt(2));
+		user.setDateNum(random.nextInt(100));
+		user.setLikeNum(random.nextInt(100));
+		
+		List<TimeLabelModel> timeLabels = new ArrayList<TimeLabelModel>();
+		for (int i = 0; i < random.nextInt(8); i++) {
+			timeLabels.add(TimeLabelModel.getRandomTimeLabel());
+		}
+		user.setTimeLabels(timeLabels);
+		
+		List<TaskLabelModel> taskLabels = new ArrayList<TaskLabelModel>();
+		for (int i = 0; i < random.nextInt(5); i++) {
+			taskLabels.add(TaskLabelModel.getRandomTaskLabel());
+		}
+		user.setTaskLabels(taskLabels);
 		return user;
 	}
 	

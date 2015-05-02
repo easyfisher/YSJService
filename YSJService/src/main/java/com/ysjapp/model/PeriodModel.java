@@ -4,6 +4,13 @@ public class PeriodModel {
 	private TimeModel start;
 	private TimeModel end;
 
+	public static PeriodModel getRandomPeriod() {
+		PeriodModel period = new PeriodModel();
+		period.setStart(TimeModel.getRandomTime());
+		period.setEnd(TimeModel.getRandomTime());
+		return period;
+	}
+	
 	public TimeModel getStart() {
 		return start;
 	}

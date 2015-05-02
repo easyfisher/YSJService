@@ -13,7 +13,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'application'
 
-mainClassName = 'com.ysjapp.application.Application'
+mainClassName = 'com.ysjapp.controller.Application'
 
 jar {
     baseName = 'gs-rest-service'
