@@ -1,4 +1,4 @@
-package hello;
+package com.ysjapp.model;
 
 public class Greeting {
 

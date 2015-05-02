@@ -1,4 +1,4 @@
-package hello;
+package com.ysjapp.controller;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
