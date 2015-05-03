@@ -12,12 +12,22 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
 apply plugin: 'application'
+apply plugin: 'war'
 
 mainClassName = 'com.ysjapp.controller.Application'
 
+war {
+	baseName = 'ysj_service'
+	//version = '1.0'
+}
+
 jar {
-    baseName = 'gs-rest-service'
-    version =  '0.1.0'
+    baseName = 'ysj_service'
+    //version =  '1.0'
+}
+
+configurations {
+	providedRuntime
 }
 
 repositories {
@@ -29,6 +39,7 @@ targetCompatibility = 1.7
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
     testCompile("junit:junit")
     compile files('Libs/protobuf-java-2.6.1.jar')
 }
